@@ -1,33 +1,37 @@
-<app-test></app-test>
-<app-test></app-test>
-<app-test2></app-test2>
-
-<h3>Witamy w kursie {{title | uppercase }}</h3><br>
-<p>Dni tygodnia</p>
-
-<div *ngIf="days.length > 0"> 
-  <ul>
-    <ng-container *ngFor="let day of days; let e = even ">
-      <li *ngIf="e">
-        {{day}}
-      </li>
-    </ng-container>
-  </ul>
-</div>
-
-
-
-
-
-  <div *ngFor ="let dog of dogs; let i = index">
-      <div *ngIf ="dog.age > 3">
-        {{i + 1}}. Mój pies ma na imię {{dog.name}} i ma {{dog.age}} lata.
+<div>
+  <div class="container">
+    <div>
+      <input [(ngModel)]="newTask">
+      <button (click)="add()">Dodaj</button>
     </div>
   </div>
 
 
+  <div class="container">
+    <div>
+      <ng-container *ngIf="tasksList.length > 0; else noTask">
+      <ul>
+          <li *ngFor="let task of tasksList">
+              {{task}}
+              <button (click)="remove(task)">Usuń</button>
+              <button (click)="done(task)">Zrobione</button>
+          </li>
+      </ul>
+    </ng-container>
+    <ng-template #noTask >
+      <p>Brak zadań, masz czas wolny!</p>
+    </ng-template>
+    </div>
 
+    <div>
+        <p>Wykonane zadania: {{tasksDone.length}}</p>
+      <ul>
+        <li *ngFor="let task of tasksDone">
+            {{task}}
+        </li>
+      </ul>
 
+    </div>
 
-
-<router-outlet></router-outlet>
+  </div>
+</div>

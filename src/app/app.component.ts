@@ -6,23 +6,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angulara';
 
-  days = ['Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota',
-  'Niedziela'];
+  newTask: string;
+  tasksList: Array<string> = [];
+  tasksDone: Array<string> = [];
 
-  dogs = new Array<Dog>();
+  add() {
+    this.tasksList.push(this.newTask);
+    this.newTask = '';
+  }
 
-  constructor(){
-    this.dogs.push(new Dog('Reksio', 4), new Dog('Łatek', 3),
-    new Dog('Maksiu', 5));
+  remove(task: string) {
+    this.tasksList = this.tasksList.filter(e => e !== task);
   }
 
 
-}
+  done(task: string) {
+    this.tasksDone.push(task);
+    this.remove(task);
+  }
+  constructor() {
 
-
-class Dog {
-  constructor(public name: string, public age: number) {
   }
 }
+
