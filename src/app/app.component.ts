@@ -1,19 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  ngOnInit(): void {
 
+  }
+
+
+
+
+
+
+
+/*
   newTask: string;
   tasksList: Array<string> = [];
   tasksDone: Array<string> = [];
 
-  add() {
-    this.tasksList.push(this.newTask);
-    this.newTask = '';
+  ngOnInit(): void {
+    this.tasksList = ['Sprzątanie kuwety', 'Gotowanie', 'Nauka Angulara', 'Podlewanie kwiatów', 'Zakupy']
+  }
+
+  add(task: string) {
+    this.tasksList.push(task);
   }
 
   remove(task: string) {
@@ -27,6 +40,9 @@ export class AppComponent {
   }
   constructor() {
 
-  }
+  }*/
 }
+
+
+
 
