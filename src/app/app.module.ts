@@ -12,6 +12,8 @@ import { TodoTaskComponent } from './todo-task/todo-task.component';
 import { DoneTaskComponent } from './done-task/done-task.component';
 import { Klikacz1Component } from './klikacz1/klikacz1.component';
 import { Klikacz2Component } from './klikacz2/klikacz2.component';
+import { ClickService } from './services/click.service';
+import { LogService } from './services/log.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,7 @@ import { Klikacz2Component } from './klikacz2/klikacz2.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [LogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
