@@ -7,7 +7,7 @@ import { post } from 'selenium-webdriver/http';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  //providers:
+  // providers:
 })
 export class AppComponent {
 
@@ -22,38 +22,55 @@ export class AppComponent {
   }
 
   getPost() {
-
+    // tslint:disable-next-line: no-shadowed-variable
+    this.httpService.getPost(1).subscribe(post => {
+      console.log(post);
+    });
   }
   getPostByUser() {
-
+    this.httpService.getPostByUser(1).subscribe(posts => {
+      console.log(posts);
+    });
   }
 
   addPost() {
-    const post: Post = ({
+    const p: Post = ({
       userId: 1,
       id: null,
       title: 'Mój post',
       body: 'Pierwszy post o angularze!',
     });
+
+    this.httpService.addPost(p).subscribe(posts => {
+      console.log(posts);
+    });
   }
 
   updatePost() {
-    const post: Post = ({
+    const p: Post = ({
       userId: 1,
       id: 1,
       title: 'sunt aut facere repellat provident occaecati excepturi optio reprehendrit',
       body: 'nowy wpis',
     });
+    this.httpService.updatePost(p).subscribe(post => {
+      console.log(post);
+    });
   }
 
   deletePost() {
-
+    this.httpService.deletePost(1).subscribe(post => {
+      console.log(post);
+    });
   }
 
   changePost() {
-    const post: Post = ({
+    const p: Post = ({
       id: 1,
       body: 'zmieniam tylko wpis',
+    });
+    this.httpService.changePost(p).subscribe(post => {
+      console.log(post);
     });
   }
 
