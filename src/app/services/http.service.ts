@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+/* import { Injectable } from '@angular/core';
 import { Post } from '../app.component';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -36,4 +36,4 @@ export class HttpService {
   changePost(post: Post) {
     return this.http.patch('https://jsonplaceholder.typicode.com/posts/' + post.id, post);
   }
-}
+} */

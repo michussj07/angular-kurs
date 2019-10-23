@@ -10,16 +10,17 @@ import { TodoTaskComponent } from './todo-task/todo-task.component';
 import { DoneTaskComponent } from './done-task/done-task.component';
 import { Klikacz1Component } from './klikacz1/klikacz1.component';
 import { Klikacz2Component } from './klikacz2/klikacz2.component';
-import { ClickService } from './services/click.service';
-import { LogService } from './services/log.service';
+// import { ClickService } from './services/click.service';
+// import { LogService } from './services/log.service';
 import { TasksService } from './services/tasks.service';
 import { CheckedDirective } from './shared/checked.directive';
 import { DateDirective } from './shared/date.directive';
 import { TransformTaskPipe } from './shared/transform-task.pipe';
 import { SortNamePipe } from './shared/sort-name.pipe';
-import { HttpService } from './services/http.service';
+// import { HttpService } from './services/http.service';
 import { HttpClient } from 'selenium-webdriver/http';
 import { HttpClientModule } from '@angular/common/http';
+import { Http2Service } from './services/http2.service';
 
 @NgModule({
   declarations: [
@@ -42,8 +43,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
 
   ],
-  providers: [HttpService],
+  providers: [TasksService, Http2Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-//lista zadań: TasksService
+
